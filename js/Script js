@@ -1,11 +1,21 @@
+function registerEvent(eventName) {
+    document.getElementById("event").value = eventName;
+}
 
 document.getElementById("registrationForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const event = document.getElementById("event").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let event = document.getElementById("event").value;
 
-    alert(`🎉 Registration Successful!\n\nName: ${name}\nEvent: ${event}`);
+    if (event === "") {
+        alert("Please select an event.");
+        return;
+    }
 
-    this.reset();
+    document.getElementById("message").innerHTML =
+        "Thank you, " + name + "! You have successfully registered for " + event + ".";
+
+    document.getElementById("registrationForm").reset();
 });
