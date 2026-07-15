@@ -1,3 +1,4 @@
+
 function registerEvent(eventName) {
     document.getElementById("event").value = eventName;
 }
